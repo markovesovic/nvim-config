@@ -86,7 +86,10 @@ return packer.startup(
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     use "karb94/neoscroll.nvim" -- smooth scroll
-
+    use { -- status line
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
       require("packer").sync()
