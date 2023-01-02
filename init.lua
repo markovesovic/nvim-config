@@ -1,8 +1,12 @@
-require "marecare.plugins"
+require "user.options"
+require "user.keymaps"
 
-require "marecare.lualine"
-require "marecare.neoscroll"
-require "marecare.options"
-require "marecare.keymaps"
-require "marecare.colorscheme"
-require "marecare.cmp"
+require "user.plugins"
+
+require "user.colorscheme"
+require "user.lualine"
+require "user.neoscroll"
+
+require "user.cmp"
+require "user.lsp"
+

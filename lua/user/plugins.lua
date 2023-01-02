@@ -72,7 +72,12 @@ return packer.startup(
     -- Colorschemes
     use "lunarvim/colorschemes"
     use "lunarvim/darkplus.nvim"
-    use 'ful1e5/onedark.nvim'
+    use {
+      "monsonjeremy/onedark.nvim",
+      branch = "treesitter",
+    }
+    use "olimorris/onedarkpro.nvim"
+    use "Mofiqul/dracula.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -80,16 +85,26 @@ return packer.startup(
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lua"
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+    -- LSP
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/mason.nvim" -- language server installer
+    use "williamboman/mason-lspconfig.nvim" -- configuration for mason installer
+    use "jose-elias-alvarez/null-ls.nvim"
+
     use "karb94/neoscroll.nvim" -- smooth scroll
-    use { -- status line
-      'nvim-lualine/lualine.nvim',
+
+    use { 
+      'nvim-lualine/lualine.nvim', -- status line
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
       require("packer").sync()
